@@ -2,3 +2,47 @@ body {
   margin: 0;
   padding: 0;
 }
+
+h1 {
+  text-align: center;
+  margin: 0 15vw;
+}
+
+.title-author-box {
+  text-align: center;
+  margin: 0 15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-author {
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookcard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5vw;
+}
+
+.books-container {
+  border: 1px solid #000;
+  margin: 0 15vw 3vw 15vw;
+}
+
+#even {
+  background-color: #d3d3d3;
+}
+
+hr {
+  margin: 0 40vw;
+}
+
+#btn {
+  align-self: flex-end;
+}

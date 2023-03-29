@@ -1,11 +1,15 @@
 const addBtn = document.querySelector('#btn');
 const titleInput = document.querySelector('#title');
 const authorInput = document.querySelector('#author');
+const listpg = document.querySelector('#list');
+const Addpg = document.querySelector('#add');
+const contactpg = document.querySelector('#contact');
 
 class Book {
   constructor() {
     this.books = JSON.parse(localStorage.getItem('books')) || [];
   }
+ 
 
   addBooks(title, author, id) {
     const newBook = { id, title, author };
@@ -62,6 +66,19 @@ function showBooks() {
   }
 }
 
+
+showPage(show, hide){
+  let showElement = document.querySelector( show );
+   showElement.classList.toggle ('hide');
+   for(let i = 0; i < Object.keys(hide).length; i++){
+     let hideElement = document.querySelector(hide[i]);
+     hideElement.classList.toggle('hide');
+   }
+  }
+
+
+
 window.addEventListener('load', () => {
   showBooks();
 });
+

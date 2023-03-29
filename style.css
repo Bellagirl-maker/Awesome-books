@@ -85,23 +85,19 @@ hr {
   align-self: flex-end;
 }
 
-.contact-box{
+.contact-box {
   margin: 0 15vw;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-footer{
+footer {
   margin: 3vw 15vw 0 15vw;
   border: 1px solid #000;
   padding: 0 1vw;
-  
 }
 
 .hide {
   display: none;
 }
-
-

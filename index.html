@@ -5,30 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome Books</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>All Awesome books</h1>
-    <section class="books-container">
-      
-    </section><hr>
-    <div class="title-author-box">
-      <div class="title-author"><h2>Add a new book</h2>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          placeholder="title"
-        /><br /><br />
-        <input
-          type="text"
-          id="author"
-          name="author"
-          placeholder="author"
-        /><br /><br />
-        <button id="btn" onclick="">Add</button></div>
-      
-    </div>
+    <header>
+      <p class="page-title">Awesome Books</p>
+      <ul>
+        <li class="separator"><a href="#">List</a></li>
+        <li class="separator"><a href="#">Add new</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+    <main class="main-box">
+      <section class="book-list-box">
+        <h2 class="booklist-title">All Awesome books</h2>
+        <section class="books-container"></section>
+        <hr />
+      </section>
+      <section class="title-author-box">
+        <div class="title-author">
+          <h2>Add a new book</h2>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="title"
+          /><br /><br />
+          <input
+            type="text"
+            id="author"
+            name="author"
+            placeholder="author"
+          /><br /><br />
+          <button id="btn" onclick="">Add</button>
+        </div>
+      </section>
+      <section class="contact-box"></section>
+    </main>
+    <footer></footer>
 
     <script type="text/javascript" src="index.js"></script>
   </body>

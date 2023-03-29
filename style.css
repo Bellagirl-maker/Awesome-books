@@ -3,7 +3,37 @@ body {
   padding: 0;
 }
 
-h1 {
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 15vw;
+  border: 1px solid #000;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+li {
+  padding: 0 1vw;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.separator {
+  border-right: 1px solid #000;
+}
+
+.page-title {
+  padding: 0 1vw;
+}
+
+.booklist-title {
   text-align: center;
   margin: 0 15vw;
 }

@@ -1,15 +1,15 @@
 const addBtn = document.querySelector('#btn');
 const titleInput = document.querySelector('#title');
 const authorInput = document.querySelector('#author');
-const listpg = document.querySelector('#list');
-const Addpg = document.querySelector('#add');
-const contactpg = document.querySelector('#contact');
+const list_pg = document.querySelector('#list');
+const Add_pg = document.querySelector('#add');
+const contact_pg = document.querySelector('#contact');
 
 class Book {
   constructor() {
     this.books = JSON.parse(localStorage.getItem('books')) || [];
   }
- 
+
 
   addBooks(title, author, id) {
     const newBook = { id, title, author };
@@ -38,7 +38,9 @@ addBtn.addEventListener('click', () => {
     size = theBook.books.length;
   }
   theBook.addBooks(titleInput.value, authorInput.value, size);
-  location.reload();
+  titleInput.value = ""
+  authorInput.value = ""
+
 });
 
 function removeBook(id) {
@@ -67,16 +69,32 @@ function showBooks() {
 }
 
 
-showPage(show, hide){
-  let showElement = document.querySelector( show );
-   showElement.classList.toggle ('hide');
-   for(let i = 0; i < Object.keys(hide).length; i++){
-     let hideElement = document.querySelector(hide[i]);
-     hideElement.classList.toggle('hide');
-   }
+function showPage(show, hide) {
+  let showElement = document.querySelector(show);
+  showElement.classList.remove('hide');
+  for (let i = 0; i < Object.keys(hide).length; i++) {
+    let hideElement = document.querySelector(hide[i]);
+    if (hideElement.classList.contains('hide') === false) {
+      hideElement.classList.add('hide');
+    }
   }
+}
 
+list_pg.addEventListener('click', () => {
+  let arr = ['.title-author-box', '.contact-box']
+  showPage(' .book-list-box', arr);
+  location.reload();
+})
 
+Add_pg.addEventListener('click', () => {
+  let arr = ['.book-list-box', '.contact-box']
+  showPage('.title-author-box', arr)
+})
+
+contact_pg.addEventListener('click', () => {
+  let arr = ['.title-author-box', '.book-list-box']
+  showPage(' .contact-box', arr)
+})
 
 window.addEventListener('load', () => {
   showBooks();

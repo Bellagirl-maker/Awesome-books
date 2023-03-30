@@ -1,6 +1,9 @@
 const addBtn = document.querySelector('#btn');
 const titleInput = document.querySelector('#title');
 const authorInput = document.querySelector('#author');
+const listPage = document.querySelector('#list');
+const addPage = document.querySelector('#add');
+const contactPage = document.querySelector('#contact');
 
 class Book {
   constructor() {
@@ -34,7 +37,8 @@ addBtn.addEventListener('click', () => {
     size = theBook.books.length;
   }
   theBook.addBooks(titleInput.value, authorInput.value, size);
-  location.reload();
+  titleInput.value = '';
+  authorInput.value = '';
 });
 
 function removeBook(id) {
@@ -61,6 +65,33 @@ function showBooks() {
     </div>`;
   }
 }
+
+function showPage(show, hide) {
+  const showElement = document.querySelector(show);
+  showElement.classList.remove('hide');
+  for (let i = 0; i < Object.keys(hide).length; i++) {
+    const hideElement = document.querySelector(hide[i]);
+    if (hideElement.classList.contains('hide') === false) {
+      hideElement.classList.add('hide');
+    }
+  }
+}
+
+listPage.addEventListener('click', () => {
+  const arr = ['.title-author-box', '.contact-box'];
+  showPage(' .book-list-box', arr);
+  location.reload();
+});
+
+addPage.addEventListener('click', () => {
+  const arr = ['.book-list-box', '.contact-box'];
+  showPage('.title-author-box', arr);
+});
+
+contactPage.addEventListener('click', () => {
+  const arr = ['.title-author-box', '.book-list-box'];
+  showPage(' .contact-box', arr);
+});
 
 window.addEventListener('load', () => {
   showBooks();
